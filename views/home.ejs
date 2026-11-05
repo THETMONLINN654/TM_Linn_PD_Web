@@ -1,0 +1,100 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+  <main>
+    <!-- Hero: Who am I? -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Who am I?</span>
+          <h1>Hi, I'm Thet Mon Linn.</h1>
+          <p class="hero-lead">
+            A second-year Diploma in Information Technology student at Republic Polytechnic,
+            specialising in Full Stack Development. I build things end to end — from the interface
+            you see down to the logic and data running behind it — with a designer's eye for detail.
+          </p>
+          <div class="btn-row">
+            <a class="btn" href="/portfolio">View My Work</a>
+            <a class="btn btn-outline" href="/contact">Get in Touch</a>
+          </div>
+        </div>
+        <div class="photo-frame has-photo">
+          <img src="/images/myprofile.jpg" alt="Thet Mon Linn in a Republic Polytechnic T-shirt" />
+        </div>
+      </div>
+    </section>
+
+    <!-- My skills, My journey -->
+    <section class="section-alt">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Overview</span>
+          <h2>My skills, My journey</h2>
+          <p>A quick look at who I am and what I've built so far.</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- About Me carousel -->
+          <article class="card carousel-card">
+            <h3>About Me</h3>
+            <div class="carousel" data-carousel>
+              <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <h4>Full Stack Development</h4>
+                  <p>Front-end interfaces, back-end logic and databases — I enjoy following a feature all the way through.</p>
+                </div>
+                <div class="carousel-slide">
+                  <h4>Design with Illustrator &amp; Photoshop</h4>
+                  <p>I approach projects with both a developer's and a designer's eye, so what I build works well and looks intentional.</p>
+                </div>
+                <div class="carousel-slide">
+                  <h4>Where I'm heading</h4>
+                  <p>Growing into a developer role after graduation, while taking on freelance software work on the side.</p>
+                </div>
+              </div>
+              <button class="carousel-btn next" aria-label="Next">&#8250;</button>
+            </div>
+            <div class="carousel-dots"><span></span><span></span><span></span></div>
+            <a class="btn btn-outline" href="/about">View More</a>
+          </article>
+
+          <!-- Portfolio carousel -->
+          <article class="card carousel-card">
+            <h3>Portfolio</h3>
+            <div class="carousel" data-carousel>
+              <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
+              <div class="carousel-track">
+                <% projects.forEach((project) => { %>
+                <div class="carousel-slide">
+                  <h4>#<%= project.number %> <%= project.title %></h4>
+                  <p><%= project.summary %></p>
+                </div>
+                <% }) %>
+              </div>
+              <button class="carousel-btn next" aria-label="Next">&#8250;</button>
+            </div>
+            <div class="carousel-dots"><% projects.forEach(() => { %><span></span><% }) %></div>
+            <a class="btn btn-outline" href="/portfolio">View More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me -->
+    <section>
+      <div class="container">
+        <div class="card" style="text-align:center; padding:56px 28px;">
+          <span class="eyebrow">Contact Me</span>
+          <h2>Looking for an intern or a freelance developer?</h2>
+          <p style="max-width:560px; margin:0 auto;">I'm open to internship and entry-level roles, as well as freelance projects. Let's talk about what you're building.</p>
+          <div class="btn-row" style="justify-content:center;">
+            <a class="btn" href="/contact">Send a Message</a>
+            <a class="btn btn-outline" href="<%= site.github %>" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<%- include("partials/footer") %>

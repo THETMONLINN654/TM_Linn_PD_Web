@@ -1,0 +1,92 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+  <main>
+    <div class="container">
+      <p class="breadcrumb"><a href="/portfolio">Portfolio</a> &rsaquo; #<%= project.number %> <%= project.category %></p>
+    </div>
+
+    <section style="padding-top:24px;">
+      <div class="container">
+        <span class="project-num">#<%= project.number %> &middot; <%= project.category.toUpperCase() %></span>
+        <h1><%= project.title %></h1>
+        <ul class="tags">
+          <% project.tags.forEach((tag) => { %><li><%= tag %></li><% }) %>
+        </ul>
+
+        <div class="project-thumb" style="border-radius:var(--radius); margin:36px 0; overflow:hidden;">
+          <% if (project.image) { %>
+          <img src="<%= project.image %>" alt="Screenshot of <%= project.title %>" />
+          <% } else { %>
+          #<%= project.number %>
+          <% } %>
+        </div>
+
+        <div class="project-detail-grid">
+          <div>
+            <h2>Overview</h2>
+            <p><%= project.overview %></p>
+
+            <h2>My Role</h2>
+            <p><%= project.role %></p>
+
+            <h2>Process &amp; Challenges</h2>
+            <p><%= project.process %></p>
+
+            <h2>What I Learned</h2>
+            <p><%= project.learned %></p>
+          </div>
+
+          <aside class="card">
+            <dl class="facts">
+              <dt>Type</dt><dd><%= project.type %></dd>
+              <dt>Timeline</dt><dd><%= project.timeline %></dd>
+              <dt>Team</dt><dd><%= project.team %></dd>
+              <dt>Tools</dt><dd><%= project.tags.join(", ") %></dd>
+            </dl>
+            <% if (project.demoUrl || project.githubUrl) { %>
+            <div class="btn-row" style="margin-top:8px;">
+              <% if (project.demoUrl) { %><a class="btn" href="<%= project.demoUrl %>" target="_blank" rel="noopener">Live Demo</a><% } %>
+              <% if (project.githubUrl) { %><a class="btn btn-outline" href="<%= project.githubUrl %>" target="_blank" rel="noopener">GitHub</a><% } %>
+            </div>
+            <% } %>
+          </aside>
+        </div>
+
+        <% if (project.gallery) { %>
+        <!-- Final work: click an image to view it full size -->
+        <h2 style="margin-top:56px;">Final Work</h2>
+        <div class="gallery">
+          <% project.gallery.forEach((item, i) => { %>
+          <figure>
+            <button class="gallery-thumb" data-modal="gallery-<%= i %>" aria-label="View <%= item.caption %> page full size">
+              <img src="<%= item.src %>" alt="<%= item.caption %> page design" loading="lazy" />
+            </button>
+            <figcaption><%= item.caption %></figcaption>
+          </figure>
+          <% }) %>
+        </div>
+
+        <% project.gallery.forEach((item, i) => { %>
+        <div class="modal" id="gallery-<%= i %>" role="dialog" aria-modal="true" aria-labelledby="gallery-title-<%= i %>">
+          <div class="modal-box modal-wide">
+            <div class="modal-header">
+              <h3 id="gallery-title-<%= i %>"><%= item.caption %></h3>
+              <button class="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <img src="<%= item.src %>" alt="<%= item.caption %> page design" loading="lazy" />
+          </div>
+        </div>
+        <% }) %>
+        <% } %>
+
+        <nav class="project-pager">
+          <a class="btn btn-outline" href="/portfolio/<%= prev.slug %>">&larr; Project #<%= prev.number %></a>
+          <a class="btn btn-outline" href="/portfolio">All Projects</a>
+          <a class="btn btn-outline" href="/portfolio/<%= next.slug %>">Project #<%= next.number %> &rarr;</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+<%- include("partials/footer") %>

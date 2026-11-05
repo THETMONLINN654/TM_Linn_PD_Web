@@ -1,0 +1,16 @@
+{
+  "name": "thet-mon-linn-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website of Thet Mon Linn, built with Node.js, Express and EJS.",
+  "private": true,
+  "main": "website.js",
+  "scripts": {
+    "start": "node website.js",
+    "dev": "node --watch website.js"
+  },
+  "dependencies": {
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "nodemailer": "^10.3.1"
+  }
+}

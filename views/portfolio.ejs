@@ -1,0 +1,45 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+  <main>
+    <!-- Hero -->
+    <div class="container">
+      <div class="hero-banner">
+        <span class="eyebrow">Portfolio</span>
+        <h1>Things I've built</h1>
+        <p>Real projects with working demos, source code, and an honest account of my role in each.</p>
+        <div class="btn-row">
+          <a class="btn" href="#projects">Browse Projects</a>
+          <a class="btn btn-outline" href="<%= site.github %>" target="_blank" rel="noopener">GitHub Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects (second layer of navigation) -->
+    <section id="projects">
+      <div class="container project-grid">
+        <% projects.forEach((project) => { %>
+        <article class="card project-card">
+          <div class="project-thumb">
+            <% if (project.image) { %>
+            <img src="<%= project.image %>" alt="Screenshot of <%= project.title %>" />
+            <% } else { %>
+            #<%= project.number %>
+            <% } %>
+          </div>
+          <div class="project-body">
+            <span class="project-num">#<%= project.number %> &middot; <%= project.category.toUpperCase() %></span>
+            <h3><%= project.title %></h3>
+            <p><%= project.summary %></p>
+            <ul class="tags" style="margin-bottom:20px;">
+              <% project.tags.forEach((tag) => { %><li><%= tag %></li><% }) %>
+            </ul>
+            <a class="btn" href="/portfolio/<%= project.slug %>">View</a>
+          </div>
+        </article>
+        <% }) %>
+      </div>
+    </section>
+  </main>
+
+<%- include("partials/footer") %>

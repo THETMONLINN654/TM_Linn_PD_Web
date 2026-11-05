@@ -1,0 +1,161 @@
+<%- include("partials/head") %>
+<%- include("partials/nav") %>
+
+  <main>
+    <!-- About hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>About</h1>
+          <ul class="tags" style="margin-bottom:20px;">
+            <li>Full Stack Developer</li>
+            <li>Designer</li>
+            <li>Republic Polytechnic</li>
+          </ul>
+          <p class="hero-lead">
+            My interest in building things started with curiosity about how the websites and apps I use
+            every day actually work. That curiosity grew into a drive to build them myself — from the
+            front-end interface a user sees down to the logic and data running behind it.
+          </p>
+          <p>
+            Alongside development, I design with Adobe Illustrator and Photoshop, which lets me approach
+            projects with both a developer's and a designer's eye. Right now I'm strengthening my
+            full-stack skills through school projects, with the goal of becoming a developer 
+            after graduation and taking on freelance work on the side.
+          </p>
+          <div class="btn-row">
+            <button class="btn" data-modal="achievements-modal">View Achievements</button>
+          </div>
+        </div>
+        <div class="photo-frame has-photo">
+          <img src="/images/myprofile.jpg" alt="Thet Mon Linn in a Republic Polytechnic T-shirt" />
+        </div>
+      </div>
+    </section>
+
+    <!-- My skills + What I learned at RP -->
+    <section class="section-alt">
+      <div class="container grid-2">
+        <article class="card skills-panel">
+          <div class="side-label">My Skills</div>
+          <div class="skills-body">
+            <!-- Edit the skill names and percentages to match your real level -->
+            <div class="skill">
+              <div class="skill-head"><span>HTML &amp; CSS</span><span>85%</span></div>
+              <div class="skill-bar"><span style="width:85%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>JavaScript</span><span>70%</span></div>
+              <div class="skill-bar"><span style="width:70%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>Back-end &amp; Databases (SQL)</span><span>65%</span></div>
+              <div class="skill-bar"><span style="width:65%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>Adobe Illustrator</span><span>80%</span></div>
+              <div class="skill-bar"><span style="width:80%"></span></div>
+            </div>
+            <div class="skill">
+              <div class="skill-head"><span>Adobe Photoshop</span><span>75%</span></div>
+              <div class="skill-bar"><span style="width:75%"></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>What I learned at RP</h3>
+          <ul class="learned-list">
+            <li>Building responsive front-end interfaces</li>
+            <li>Designing and querying relational databases</li>
+            <li>Developing server-side logic and APIs</li>
+            <li>Working in project teams with version control (Git)</li>
+            <li>Taking a project from idea to working demo</li>
+          </ul>
+          <button class="btn btn-outline" data-modal="certificates-modal">View Certificate</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- My activities at RP and outside RP -->
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Beyond the classroom</span>
+          <h2>My activities at RP and outside RP</h2>
+        </div>
+        <div class="activities-grid">
+          <article class="card activity">
+            <img class="activity-photo" src="/images/OPSL.jpg" alt="Thet Mon Linn with fellow Orientation Programme student leaders" />
+            <div class="meta">At RP &middot; 2026</div>
+            <h3>Orientation Programme Student Leader</h3>
+            <p>I served as a student leader for RP's 2026 Orientation Programme, helping welcome new students and guide them through their first days at RP, working alongside a team of fellow leaders.</p>
+          </article>
+          <article class="card activity">
+            <img class="activity-photo" src="/images/IS%20program.jpg" alt="Group photo of volunteers and students at RP's IS Welcome Programme" />
+            <div class="meta">At RP &middot; Volunteer</div>
+            <h3>IS Welcome Programme Volunteer</h3>
+            <p>I volunteered at RP's IS Welcome Programme, helping new international students feel at home and settle into campus life, from their first welcome session to getting to know their new school.</p>
+          </article>
+          <article class="card activity">
+            <img class="activity-photo" src="/images/competition.jpg" alt="Our MARLIN aquatic robot with thrusters and a front gate" />
+            <div class="meta">Via RP &middot; 2026 &middot; Ongoing</div>
+            <h3>MARLIN 2026 Robotics Competition</h3>
+            <p>Through RP, I joined a team competing in MARLIN 2026 "Link Lockdown", an aquatic robotics challenge. We are building and programming a water robot that completes tasks in a pool, both autonomously and by remote control. The competition is still ongoing.</p>
+          </article>
+          <article class="card activity">
+            <img class="activity-photo" src="/images/bestcrew.jpg" alt="Crew of the Month plaque with Mon Linn's photo at McDonald's" />
+            <div class="meta">Outside RP &middot; Jul 2025 &ndash; Present</div>
+            <h3>Service Crew, McDonald's &middot; Crew of the Month</h3>
+            <p>I have worked part-time as service crew at McDonald's since July 2025, alongside my studies. With over a year of experience in a fast-paced customer service role, my hard work was recognised when I was named Crew of the Month in September 2026.</p>
+          </article>
+          <article class="card activity">
+            <img class="activity-photo" src="/images/cooking.jpg" alt="Illustration of Mon Linn happily eating a home-cooked meal while watching a K-drama" />
+            <div class="meta">Outside RP &middot; Hobby &amp; Daily Routine</div>
+            <h3>Home-Cooked Happiness</h3>
+            <p>Cooking is both my hobby and my daily routine. As an independent young adult, I cook my own meals, and nothing feels more satisfying than enjoying a dish I made myself while watching my favourite K-drama.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <div class="modal" id="achievements-modal" role="dialog" aria-modal="true" aria-labelledby="ach-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="ach-title">Achievements</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Achievement #1 — Participating in MARLIN 2026 Robotics Competition</li>
+          <li>Achievement #2 — Named Crew of the Month at McDonald's</li>
+          <li>Achievement #3 — Completed multiple online courses and obtained certifications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="certificates-modal" role="dialog" aria-modal="true" aria-labelledby="cert-title">
+    <div class="modal-box modal-certs">
+      <div class="modal-header">
+        <h3 id="cert-title">Certificates (<%= certificates.length %>)</h3>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- The list of certificates is in website.js. Click a card to open its PDF. -->
+        <div class="cert-grid">
+          <% certificates.forEach((cert) => { %>
+          <a class="cert-card" href="<%= encodeURI('/certificates/' + cert.file) %>" target="_blank" rel="noopener" title="Open <%= cert.title %> (PDF)">
+            <div class="cert-thumb"><img src="<%= encodeURI('/certificates/' + cert.image) %>" alt="<%= cert.issuer %> certificate: <%= cert.title %>" /></div>
+            <h4><%= cert.title %></h4>
+            <p><%= cert.issuer %> &middot; <%= cert.date %></p>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include("partials/footer") %>
